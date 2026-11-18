@@ -36,15 +36,12 @@ export default function PdfModal({ module, onClose }: PdfModalProps) {
         onClick={(e) => e.stopPropagation()}
         className="flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-line bg-surface-card"
       >
-        {/* Header */}
         <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-3.5">
           <div className="min-w-0">
             <span className="inline-block rounded-full bg-brand-soft px-2.5 py-0.5 text-[10px] font-bold text-brand">
               {module.category}
             </span>
-            <h3 className="mt-1 truncate text-[15px] font-bold text-ink">
-              {module.title}
-            </h3>
+            <h3 className="mt-1 truncate text-[15px] font-bold text-ink">{module.title}</h3>
           </div>
           <div className="flex shrink-0 items-center gap-1.5">
             <a
@@ -60,13 +57,12 @@ export default function PdfModal({ module, onClose }: PdfModalProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="focus-brand inline-flex items-center gap-1.5 rounded-lg bg-surface-2 px-3 py-2 text-xs font-bold text-ink-soft transition-colors hover:text-ink"
-              title="Buka di tab baru"
             >
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
             <button
               onClick={onClose}
-              className="focus-accent rounded-lg p-2 text-ink-soft transition-colors hover:bg-accent-soft hover:text-accent"
+              className="focus-brand rounded-lg p-2 text-ink-soft transition-colors hover:bg-surface-2 hover:text-ink"
               aria-label="Tutup"
             >
               <X className="h-5 w-5" />
@@ -74,7 +70,6 @@ export default function PdfModal({ module, onClose }: PdfModalProps) {
           </div>
         </div>
 
-        {/* Body */}
         <div className="flex-1 bg-surface-2 p-3">
           <iframe
             src={`${module.fileUrl}#view=FitH`}

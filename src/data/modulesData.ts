@@ -42,7 +42,6 @@ export const modulesData: ModuleItem[] = [
     fileUrl: '/modul/checklist/form-serah-terima.xlsx',
     fileSize: '450 KB',
     lastUpdated: 'Nov 2026',
-    isOnboarding: false,
   },
   {
     id: '4',
@@ -53,7 +52,6 @@ export const modulesData: ModuleItem[] = [
     fileUrl: '/modul/katalog/katalog-ban.pdf',
     fileSize: '5.2 MB',
     lastUpdated: 'Nov 2026',
-    isOnboarding: false,
   },
   {
     id: '5',
@@ -75,6 +73,5 @@ export const modulesData: ModuleItem[] = [
     fileUrl: '/modul/checklist/checklist-serah-terima.xlsx',
     fileSize: '380 KB',
     lastUpdated: 'Nov 2026',
-    isOnboarding: false,
   },
 ];

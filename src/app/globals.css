@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
-/* ============================================================
-   DESIGN TOKENS — Light only, flat, no gradient
-   ============================================================ */
 :root {
   --background: #FDFDFE;
-  --foreground: #0B1220;
+  --foreground: #0F0E0E;
 
   --surface: #FDFDFE;
   --surface-card: #FFFFFF;
-  --surface-2: #F4F6FA;
-  --ink: #0B1220;
-  --ink-soft: #4A5568;
-  --line: #E6EAF2;
+  --surface-2: #F5F4FA;
+  --ink: #0F0E0E;
+  --ink-soft: #4B4B5C;
+  --line: #E5E3EE;
 
-  --brand: #0099ff;
-  --brand-soft: rgba(0, 153, 255, 0.10);
-  --brand-ring: rgba(0, 153, 255, 0.35);
+  --brand: #27187E;
+  --brand-soft: rgba(39, 24, 126, 0.08);
+  --brand-ring: rgba(39, 24, 126, 0.30);
 
-  --accent: #ff3d17;
-  --accent-soft: rgba(255, 61, 23, 0.10);
-  --accent-ring: rgba(255, 61, 23, 0.30);
+  --royal: #014BAA;
+  --royal-soft: rgba(1, 75, 170, 0.08);
+  --royal-ring: rgba(1, 75, 170, 0.30);
 }
 
 @theme inline {
@@ -39,14 +36,11 @@
   --color-brand-soft: var(--brand-soft);
   --color-brand-ring: var(--brand-ring);
 
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-ring: var(--accent-ring);
+  --color-royal: var(--royal);
+  --color-royal-soft: var(--royal-soft);
+  --color-royal-ring: var(--royal-ring);
 }
 
-/* ============================================================
-   BASE
-   ============================================================ */
 html {
   color-scheme: light !important;
   scroll-behavior: smooth;
@@ -71,26 +65,22 @@ body {
   border-color: var(--line);
 }
 
-/* ============================================================
-   UTILITIES — NO GRADIENT
-   ============================================================ */
 .focus-brand:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--brand-ring);
 }
 
-.focus-accent:focus-visible {
+.focus-royal:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--accent-ring);
+  box-shadow: 0 0 0 3px var(--royal-ring);
 }
 
-/* Card lift — shadow netral, bukan berwarna */
 .card-lift {
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .card-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px -8px rgba(11, 18, 32, 0.10);
+  box-shadow: 0 8px 20px -8px rgba(15, 14, 14, 0.10);
   border-color: var(--brand);
 }
 

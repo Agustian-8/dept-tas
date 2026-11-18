@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -9,8 +11,12 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Portal Technical After Sales",
-  description: "Pusat Modul, SOP, dan Panduan Lapangan Internal",
+  title: {
+    default: "Technical After Sales — Portal Departemen",
+    template: "%s | Technical After Sales",
+  },
+  description:
+    "Portal internal Technical After Sales: profil departemen, materi, tim, dan kontak eskalasi.",
 };
 
 export default function RootLayout({
@@ -19,12 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={jakarta.variable} style={{ backgroundColor: '#FDFDFE' }}>
+    <html
+      lang="id"
+      className={jakarta.variable}
+      style={{ backgroundColor: "#FDFDFE" }}
+    >
       <body
-        className={`${jakarta.className} antialiased`}
-        style={{ backgroundColor: '#FDFDFE' }}
+        className={`${jakarta.className} flex min-h-screen flex-col antialiased`}
+        style={{ backgroundColor: "#FDFDFE" }}
       >
-        {children}
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
