@@ -6,16 +6,22 @@ interface AvatarProps {
   src?: string;
   initials: string;
   name: string;
+  size?: 'md' | 'lg';
 }
 
-export default function Avatar({ src, initials, name }: AvatarProps) {
+export default function Avatar({ src, initials, name, size = 'md' }: AvatarProps) {
   const [imgError, setImgError] = useState(false);
   const showInitials = !src || imgError;
 
+  const sizeClass =
+    size === 'lg' ? 'h-20 w-20 text-2xl' : 'h-16 w-16 text-lg';
+
   return (
-    <div className="relative aspect-square w-full overflow-hidden bg-brand">
+    <div
+      className={`relative shrink-0 overflow-hidden rounded-full bg-brand ring-4 ring-surface-2 ${sizeClass}`}
+    >
       {showInitials ? (
-        <div className="flex h-full w-full items-center justify-center text-4xl font-bold text-white">
+        <div className="flex h-full w-full items-center justify-center font-bold text-white">
           {initials}
         </div>
       ) : (
@@ -23,7 +29,7 @@ export default function Avatar({ src, initials, name }: AvatarProps) {
           src={src}
           alt={name}
           onError={() => setImgError(true)}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="h-full w-full object-cover"
         />
       )}
     </div>
